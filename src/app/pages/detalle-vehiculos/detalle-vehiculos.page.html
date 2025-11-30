@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalle vehiculo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-label>
+      <h2 style="color:rgb(255, 0, 0)">UID Usuario: </h2>
+      <h3>{{ uid }}</h3>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <h2 style="color:rgb(255, 0, 0)">Rut Usuario: </h2>
+      <h3>{{ rut }}</h3>
+    </ion-label>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>
+      <h2 style="color:rgb(255, 0, 0)">Nombre Usuario: </h2>
+      <h3>{{ pnombre }}</h3>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <h2 style="color:rgb(255, 0, 0)">Apellido Usuario: </h2>
+      <h3>{{ papellido }}</h3>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <h2 style="color:rgb(255, 0, 0)">Patente vehículo: </h2>
+      <h3>{{ patente }}</h3>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Marca: </ion-label>
+    <p>{{ marca }}</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Modelo: </ion-label>
+    <p>{{ modelo }}</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Color: </ion-label>
+    <p>{{ color }}</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Asientos: </ion-label>
+    <p>{{ asientos }}</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Año: </ion-label>
+    <p>{{ anio }}</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked"> Tipo Vehiculo: </ion-label>
+    <p>{{ tipo }}</p>
+  </ion-item>
+
+</ion-content>

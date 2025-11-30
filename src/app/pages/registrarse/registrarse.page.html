@@ -1,0 +1,109 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card class="fondo-card">
+    <ion-card-content [formGroup]="registerForm">
+
+      <ion-item >
+        <ion-input formControlName="rut" [(ngModel)]="rutValue" type="text" labelPlacement="floating" label="Rut:" placeholder="Ej: x.xxx.xxx-x"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('rut')?.hasError('invalidRut')">
+        ¡El RUT es inválido!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('rut')?.hasError('minlength')">
+        El Rut debe ser exacto (x.xxx.xxx-x)!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('rut')?.hasError('maxlength')">
+        El Rut debe ser exacto (xx.xxx.xxx-x)!
+      </ion-text>
+
+      <ion-item>
+        <ion-input formControlName="fechaNacimiento" [(ngModel)]="fechaNacimientoValue" type="date" labelPlacement="floating" label="Fecha de Nacimiento"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('fechaNacimiento')?.hasError('underAge') && registerForm.get('fechaNacimiento')?.touched">
+        Debes ser mayor de 18 años.
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="pnombre" [(ngModel)]="pnombreValue" type="text" labelPlacement="floating" label="Primer Nombre:" placeholder="Ej: Cristiano"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('pnombre')?.hasError('minlength')">
+        El Primer Nombre debe tener 2 caracteres como mínimo!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="snombre" [(ngModel)]="snombreValue" type="text" labelPlacement="floating" label="Segundo Nombre:" placeholder="Ej: Ronaldo"></ion-input>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('snombre')?.hasError('minlength')">
+        El Segundo Nombre debe tener 2 caracteres como mínimo!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="papellido" [(ngModel)]="papellidoValue" type="text" labelPlacement="floating" label="Primer Apellido:" placeholder="Ej: Do Santos"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('papellido')?.hasError('minlength')">
+        El Primer Apellido debe tener 2 caracteres como mínimo!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="sapellido" [(ngModel)]="sapellidoValue" type="text" labelPlacement="floating" label="Segundo Apellido:" placeholder="Ej: Aveiro"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('sapellido')?.hasError('minlength')">
+        El Segundo Apellido debe tener 2 caracteres como mínimo!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="celular" [(ngModel)]="celularValue" type="text" labelPlacement="floating" label="Celular:" placeholder="Ej: 912345678"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('celular')?.hasError('minlength')">
+        El Celular debe tener 9 caracteres!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('celular')?.hasError('maxlength')">
+        El Celular debe tener menos de 10 caracteres!
+      </ion-text>
+      
+      
+      
+      <ion-item>
+        <ion-input formControlName="email" [(ngModel)]="emailValue" type="email" labelPlacement="floating" label="Email:" placeholder="Ej: email@gmail.cl"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('email')?.hasError('email')">
+        El Email es inválido!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="pass" [(ngModel)]="passValue" type="password"  labelPlacement="floating" label="Contraseña:" placeholder="Ej: pass12"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('pass')?.hasError('minlength')">
+        La contraseña debe tener 6 caracteres!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="pass2" [(ngModel)]="pass2Value" type="password"  labelPlacement="floating" label="Repetir Contraseña:" placeholder="Ej: pass12"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="registerForm.get('pass2')?.hasError('minlength')">
+        La contraseña debe tener 6 caracteres!
+      </ion-text>
+      
+      <div class="btn-registrarse">
+        <ion-button color="warning" expand="block" (click)="register()" [disabled]="registerForm.invalid">REGISTRARSE</ion-button> 
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crea tu viaje</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button size="small" (click)="goToMyLocation()">
+        <ion-icon slot="icon-only" name="location-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (click)="closeSearch()">
+  <app-loading *ngIf="!isUserLocationReady; else mapReady"></app-loading>
+
+  <ng-template #mapReady>
+    <app-map-view></app-map-view>
+    
+    <app-btn-confirmar-ruta></app-btn-confirmar-ruta>
+    <app-search-bar></app-search-bar>
+  </ng-template>
+</ion-content>

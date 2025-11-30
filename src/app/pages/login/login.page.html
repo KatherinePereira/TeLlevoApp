@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content>
+  <ion-card class="fondo-card">
+    <div class="img-login">
+      <img id="imgingre" alt="" src="assets/logotellevoapp.png" />
+    </div>
+  
+    <ion-card-content [formGroup]="loginForm">
+      <!-- Input usuario -->
+      <ion-item>
+        <ion-input formControlName="email" [(ngModel)]="emailValue" type="email" labelPlacement="floating" label="Email:" placeholder="Ej: email@gmail.cl"></ion-input>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
+        El Email es inválido!
+      </ion-text>
+      
+      <!-- Input contraseña -->
+      <ion-item>
+        <ion-input formControlName="pass" [(ngModel)]="passValue" type="password" labelPlacement="floating" label="Contraseña: " placeholder="Ej: pass12"></ion-input>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="loginForm.get('pass')?.hasError('minlength')">
+        La contraseña debe tener 6 caracteres!
+      </ion-text>
+
+      <!-- Botón ingresar -->
+      <div class="btn-ingresar">
+        <ion-button color="warning" expand="block" (click)="login()">INGRESAR</ion-button> 
+      </div>
+
+      <div class="social-login-buttons">
+        <ion-button expand="block" color="primary" (click)="onLoginWithGoogle()">
+          Iniciar sesión con Google
+        </ion-button>
+        <ion-button expand="block" color="dark" (click)="onLoginWithGitHub()">
+          Iniciar sesión con GitHub
+        </ion-button>
+      </div>
+      
+      <div class="textos-login">
+        <div class="d-crear-cuenta">
+          <ion-text class="text-crear-cuenta">¿No tienes cuenta?</ion-text> <a class="a-registrar" color="warning" routerLink="/registrarse">REGISTRARSE</a>
+        </div>
+
+        <div class="d-recuperar-contra">
+          <ion-text class="text-recuperar-contra">¿Olvidó su contraseña?</ion-text> <a class="a-recuperar" color="warning" routerLink="/recuperar">RECUPERAR</a>
+        </div> 
+      </div>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Acciones</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" color="success" (click)="crearCuentas()">
+        Crear Cuentas
+      </ion-button>
+      <ion-button expand="block" color="danger" (click)="eliminarCuentas()">
+        Eliminar Cuentas
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="cuentas.length > 0">
+    <ion-card-header>
+      <ion-card-title>Cuentas Generadas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let cuenta of cuentas">
+          <ion-label>
+            <p>Email: {{ cuenta.email }}</p>
+            <p>Contraseña: {{ cuenta.password }}</p>
+            <p>Tipo: {{ cuenta.tipo }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

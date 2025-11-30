@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Vehículos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let vehiculo of vehiculos">
+      <ion-label>
+        <p>Tipo de vehículo: {{ vehiculo.tipo }}</p>
+        <h2>Patente: {{ vehiculo.patente }}</h2>
+      </ion-label>
+
+      <ion-checkbox slot="start" [checked]="vehiculo.predeterminado" (ionChange)="marcarComoPredeterminado(vehiculo)"></ion-checkbox>
+
+      <ion-button fill="outline" color="primary" (click)="verDetalleVehiculo(vehiculo)">
+        <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" color="danger" (click)="eliminarVehiculo(vehiculo)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="vehiculos.length === 0" class="no-vehiculos">
+    <ion-text>No hay vehículos disponibles para mostrar.</ion-text>
+  </div>
+</ion-content>

@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="fondo-card">
+    <ion-card-content [formGroup]="vehiculoForm">
+      <h2 class="titulo">VEHÍCULO</h2>
+      <ion-item>
+        <ion-input formControlName="marca" [(ngModel)]="marcaValue" type="text" label="Marca" labelPlacement="floating" placeholder="Ej: Mazda"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('marca')?.hasError('pattern')">
+        La Marca no puede contener números!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('marca')?.hasError('minlength')">
+        La Marca debe tener 2 caracteres como mínimo!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="modelo" [(ngModel)]="modeloValue" type="text" label="Modelo" labelPlacement="floating" placeholder="Ej: Mazda 2"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('modelo')?.hasError('minlength')">
+        El modelo debe tener 2 caracteres como mínimo!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="patente" [(ngModel)]="patenteValue" type="text" label="Patente:" labelPlacement="floating" placeholder="Ej: AA-BB-11"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('patente')?.hasError('pattern')">
+        La Patente debe seguir el formato correcto <br> (AB-12-CD o AB-CD-12).
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="color" [(ngModel)]="colorValue" type="text" label="Color:" labelPlacement="floating" placeholder="Ej: Rojo"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('color')?.hasError('pattern')">
+        El Color no puede contener números!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="asientos" [(ngModel)]="asientosValue" type="text" label="Asientos:" labelPlacement="floating" placeholder="1 - 4"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('asientos')?.hasError('min')">
+        La cantidad de asientos no puede ser menor a 1!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('asientos')?.hasError('max')">
+        La cantidad de asientos no puede ser mayor a 4!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('asientos')?.hasError('pattern')">
+        La cantidad de asientos debe ser un número!
+      </ion-text>
+      
+      <ion-item>
+        <ion-input formControlName="anio" [(ngModel)]="anioValue" type="text" label="Año:" labelPlacement="floating" placeholder="2015"></ion-input>
+        <span class="asterisco">*</span>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('anio')?.hasError('min')">
+        El Año no puede ser menor a 1960!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="vehiculoForm.get('anio')?.hasError('max')">
+        El Año no puede ser mayor al año actual!
+      </ion-text>
+      
+      <ion-item>
+        <ion-select formControlName="tipo" [(ngModel)]="tipoValue" type="text" label="Tipo vehículo:" labelPlacement="floating" placeholder="Seleccionar">
+          <ion-select-option value="Auto">Auto</ion-select-option>
+          <ion-select-option value="Camioneta">Camioneta</ion-select-option>
+        </ion-select>
+        <span class="asterisco">*</span>
+      </ion-item>
+            
+    </ion-card-content>
+  </ion-card>
+  <!-- boton registrar -->
+    <div class="btn-registrar">
+      <ion-button color="warning" expand="block" (click)="registrarVehiculo()" [disabled]="vehiculoForm.invalid">REGISTRAR</ion-button> 
+    </div>
+
+</ion-content>

@@ -1,0 +1,17 @@
+.avatar {
+    display: flex;
+    justify-content: center; // Centra horizontalmente
+    align-items: center; // Centra verticalmente (opcional)
+  
+    img {
+      width: 40px;
+      height: 40px;    
+    }
+}
+
+h1{
+    font-size: 11px;
+}
+p{
+    font-size: 12px;
+}

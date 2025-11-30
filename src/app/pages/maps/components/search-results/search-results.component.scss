@@ -1,0 +1,28 @@
+.pointer {
+    cursor: pointer;
+}
+
+p {
+    font-size: 10px;
+}
+
+.titulo{
+    font-size: 14px;
+}
+button{
+    font-size: 10px;
+}
+
+.list-group-item {
+    font-size: 16px; /* Asegúrate de que el texto sea legible */
+    color: #333; /* Asegúrate de que el color del texto contraste con el fondo */
+}
+
+.list-group-item.active {
+    background-color: #007bff; /* Color para el elemento activo */
+    color: white; /* Color de texto para el elemento activo */
+}
+
+.btn-info {
+    margin-top: 10px; /* Espacio entre el botón y la lista de pasos */
+}

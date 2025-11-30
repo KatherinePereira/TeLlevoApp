@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>     
+  <ion-grid padding>
+    <ion-row>
+      <!-- Columna para Capacidad -->
+      <ion-col size="6">
+        <div class="info-item" *ngIf="viaje; else loading">
+          <ion-label class="info-title">Capacidad:</ion-label>
+          <div class="info-value">{{ viaje.numAsientos  }}</div>
+        </div>
+      </ion-col>
+
+      <!-- Columna para Precio -->
+      <ion-col size="6">
+        <div class="info-item" *ngIf="viaje; else loading">
+          <ion-label class="info-title">Precio:</ion-label>
+          <div class="info-value">{{ viaje.precio }}</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div #mapDiv class="map-container"></div>
+
+  <ion-card class="comenzar-viaje">
+    <ion-card-content>
+      <h3>¿Desea unirse a este viaje?</h3>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-row>
+    <ion-col size="6">
+      <ion-button expand="block" color="danger" routerLink="/pasajero">NO</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" color="success" (click)="unirseAlViaje()"  >SI</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <!-- Loading -->
+  <ng-template #loading>
+    <ion-item>
+      <ion-label>Cargando datos del viaje...</ion-label>
+    </ion-item>
+  </ng-template>
+</ion-content>

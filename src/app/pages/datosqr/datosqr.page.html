@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Datos QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="userData">
+    <ion-card-header>
+      <ion-card-title style="text-align: center; font-size: 20px;">Información adyacente al usuario (QR)</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" style="color:rgb(255, 0, 0)" >UID Usuario:</ion-label>
+        <ion-input style="color:rgb(255, 0, 0)" value="{{ uid }}" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Primer Nombre:</ion-label>
+        <ion-input value="{{ userData.pnombre }}" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Segundo Nombre:</ion-label>
+        <ion-input value="{{ userData.snombre }}" readonly placeholder="(La persona no inscribió su segundo nombre)"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Primer Apellido:</ion-label>
+        <ion-input value="{{ userData.papellido }}" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Segundo Apellido:</ion-label>
+        <ion-input value="{{ userData.sapellido }}" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Rut:</ion-label>
+        <ion-input value="{{ userData.rut }}" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Teléfono:</ion-label>
+        <ion-input value="{{ userData.celular }}" readonly></ion-input>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!userData">
+    <ion-card-content style="text-align: center;">Cargando datos del usuario...</ion-card-content>
+  </ion-card>
+</ion-content>

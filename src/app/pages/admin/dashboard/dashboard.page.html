@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let aux of usuarios">
+      <ion-label>
+        <p>Tipo usuario: {{ aux.tipo }}</p>
+        <h2>{{ aux.email }}</h2>
+      </ion-label>
+      <ion-button fill="outline" color="success" (click)="habilitarUsuario(aux.uid)">
+        <ion-icon slot="icon-only" name="fitness-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" color="danger" (click)="deshabilitarUsuario(aux.uid)">
+        <ion-icon slot="icon-only" name="skull-sharp"></ion-icon>
+      </ion-button>
+      <ion-button fill="outline" color="primary" (click)="editarUser(aux.uid)">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

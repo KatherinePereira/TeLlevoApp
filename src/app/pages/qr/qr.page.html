@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+
+  <!-- Segments -->
+  <ion-segment [(ngModel)]="segment" mode="ios">
+    <ion-segment-button value="scan">
+      <ion-label>Scan QR</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="generate">
+      <ion-label>Tu QR</ion-label>
+      
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Scan QR -->
+  <div *ngIf="segment === 'scan' " class="center-content">
+
+    <div class="segment-content ion-padding">
+
+      <img src="assets/qr/scan-qr.webp" alt="">
+
+      <h6 class="scan-label"> Escanea el QR para obtener la informacion.</h6>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button class="submit" (click)="startScan()" expand="block">
+            Scan
+            <ion-icon slot="end" name="scan-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+  </div>
+
+  <!-- Tu QR -->
+  <div class="segment" *ngIf="segment === 'generate' " class="center-content">
+    <div class="segment-content ion-padding">
+      <div id="qrImagen">
+        <div class="d-flex-center">
+          <div class="d-flex-center qr-wrapper">
+            <qr-code [value]="qrValue" size="190" errorCorrectionLevel="M" />
+          </div>
+        </div>
+        <h6 class="scan-label"> Este QR contiene tu información más relevante para reconocer que realmente eres tu.</h6>
+      </div>
+    </div>
+    
+  </div>
+  
+</ion-content>

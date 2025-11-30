@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Viajes disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let viaje of (viajes | async)" (click)="selectViaje(viaje.patente)">
+      <ion-thumbnail slot="start">
+        <ion-avatar class="avatar">
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+      </ion-thumbnail>
+    
+      <ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <h2>Nombre:</h2>
+              <p>{{ viaje.pnombre }}</p>
+            </ion-col>
+            <ion-col size="6">
+              <h2>Capacidad:</h2>
+              <p>{{ viaje.numAsientos }}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <h2>Apellido:</h2>
+              <p>{{ viaje.papellido }}</p>
+            </ion-col>
+            <ion-col size="6">
+              <h2>Precio:</h2>
+              <p>{{ viaje.precio }}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-label>
+    </ion-item>   
+    
+  </ion-list>
+</ion-content>

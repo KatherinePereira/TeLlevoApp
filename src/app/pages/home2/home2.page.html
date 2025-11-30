@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!-- Menu 3 rayitas -->
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Card para la bienvenida -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Hola, {{ userName }} {{ userApellido }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Bienvenido al sistema, estamos felices de tenerte aquí.
+    </ion-card-content>
+  </ion-card>
+<!-- Card para ir a los equipos -->
+  <ion-card>
+    <div class="img-conductor">
+      <img alt="Soy conductor" src="assets/menu/soy-conductor.png" />
+    </div>
+    
+    <ion-card-header>
+      <ion-card-title>Quiero crear un viaje</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Entra aquí para poder crear un viaje hacia tu destino!
+      <div class="btn-inscribete" >
+        <ion-button routerLink="/maps/map-screen" color="warning">
+        <ion-icon slot="start" name="car-sport-outline"></ion-icon>
+          Crear
+        </ion-button> 
+      </div>
+    </ion-card-content>
+  </ion-card>
+<!-- Card para ir a los jugadores -->
+  <ion-card>
+    <div class="img-pasajero">
+      <img alt="Pasajero" src="assets/menu/pasajero.png" />
+    </div>
+    <ion-card-header>
+      <ion-card-title>Quiero viajar</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Entra aquí para poder unirte a un viaje e ir hacia tu destino.
+      <div class="btn-buscar-viaje">
+        <ion-button routerLink="/pasajero" color="warning">
+          <ion-icon slot="start" name="walk-outline" ></ion-icon>
+            Buscar Viaje
+        </ion-button> 
+      </div>
+        
+    </ion-card-content>
+  </ion-card>
+  
+  
+</ion-content>

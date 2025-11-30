@@ -1,0 +1,44 @@
+.map-container{
+  margin: 10px;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comenzar-viaje{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.74);
+  color: rgb(42, 42, 42);
+}
+
+ion-content {
+  --background: url('/assets/menu/fondoamarillo.png') no-repeat center center / cover;
+}
+
+.info-item {
+  background-color: #f9f9f9; /* Color de fondo suave */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 15px; /* Espaciado interno */
+  margin-bottom: 20px; /* Espacio entre elementos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.info-title {
+  font-weight: bold;
+  color: #555; /* Color del texto del título */
+  margin-bottom: 5px; /* Espacio entre el título y el valor */
+}
+
+.info-value {
+  font-size: 18px; /* Tamaño de fuente más grande para el valor */
+  color: #333; /* Color del texto del valor */
+  font-family: 'Arial', sans-serif; /* Tipografía más moderna */
+}
+
+.mapboxgl-marker.green-marker {
+  z-index: 1;
+}
+

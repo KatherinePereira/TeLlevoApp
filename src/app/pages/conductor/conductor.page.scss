@@ -1,0 +1,58 @@
+ion-label {
+    margin-left: 20px;
+}
+ion-card{
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+ion-content {
+    --background: url('/assets/menu/fondoamarillo.png') no-repeat center center / cover;
+    img {
+        max-width: 160px;
+    }
+}
+
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    color: black;
+}
+
+.fondo-card{
+    background-color: rgba(255, 255, 255, 0.753);
+    border: 1px solid #0000003c;
+    
+}
+
+.btn-registrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.fondo-card ion-item {
+    --background: rgba(255, 255, 255, 0); /* Color de fondo del ion-item */
+}
+
+/* Estilo para el ion-input */
+.fondo-card ion-input {
+    --background: rgba(197, 3, 3, 0); /* Color de fondo del input */
+    --padding-start: 0; /* Ajuste para eliminar relleno adicional si es necesario */
+}
+
+/* Ajuste adicional para el border y el color del input si es necesario */
+.fondo-card ion-item {
+    --border-color: rgba(0, 0, 0, 0.244); /* Ajuste el color del borde para coincidir con el color de fondo */
+}
+
+.asterisco {
+    color: red;
+    margin-left: 7px;
+    font-weight: bold;
+}

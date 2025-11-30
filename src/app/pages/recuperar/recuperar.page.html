@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="fondo-card">
+      <ion-card-content>
+        <form [formGroup]="recuperarForm" (ngSubmit)="recuperarContrasenia()">
+          <ion-item>
+            <ion-input formControlName="email" type="email" labelPlacement="floating" label="Email:" placeholder="Ej: email@gmail.cl"></ion-input>
+          </ion-item>
+          <ion-text position="stacked" color="danger" *ngIf="recuperarForm.get('email')?.hasError('required') && recuperarForm.get('email')?.touched">
+            El Email es requerido!
+          </ion-text>
+          <ion-text position="stacked" color="danger" *ngIf="recuperarForm.get('email')?.hasError('email') && recuperarForm.get('email')?.touched">
+            El Email es inválido!
+          </ion-text>
+
+          <div class="btn-recuperar">
+            <ion-button color="warning" expand="block" type="submit" [disabled]="recuperarForm.invalid">RECUPERAR</ion-button> 
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

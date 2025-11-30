@@ -1,0 +1,69 @@
+ion-card{
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 23px;
+}
+
+.btn-registrarse{
+    ion-button{
+        margin-top: 20px;
+    }
+}
+
+.fondo-card{
+    background-color: rgba(255, 255, 255, 0.753);
+    border: 1px solid #0000003c;
+    
+}
+
+ion-content {
+    --background: url('/assets/menu/fondoamarillo.png') no-repeat center center / cover;
+    img {
+        max-width: 160px;
+    }
+}
+
+
+/* Ajusta el color de fondo del ion-input para que coincida con el color de fondo del card */
+.fondo-card ion-item {
+    --background: rgba(255, 255, 255, 0); /* Color de fondo del ion-item */
+}
+
+/* Estilo para el ion-input */
+.fondo-card ion-input {
+    --background: rgba(197, 3, 3, 0); /* Color de fondo del input */
+    --padding-start: 0; /* Ajuste para eliminar relleno adicional si es necesario */
+}
+
+/* Ajuste adicional para el border y el color del input si es necesario */
+.fondo-card ion-item {
+    --border-color: rgba(0, 0, 0, 0.244); /* Ajuste el color del borde para coincidir con el color de fondo */
+}
+
+
+
+/* Estilo para el ion-header */
+ion-header {
+    --background: rgba(255, 255, 255, 0); /* Cambia al color de fondo que desees */
+}
+
+/* Estilo para la barra de herramientas dentro del ion-header */
+ion-header ion-toolbar {
+    --background: rgba(255, 255, 255, 0); /* Cambia al color que desees para la barra de herramientas */
+}
+
+/* Estilo para el título dentro del ion-toolbar */
+ion-header ion-title {
+    color: #000000; /* Cambia al color que desees para el texto del título */
+}
+
+/* Estilo para el botón de volver dentro del ion-header */
+ion-header ion-back-button {
+    --color: rgb(0, 0, 0);; /* Cambia al color que desees para el icono del botón de volver */
+}
+
+.asterisco {
+    color: red;
+    font-weight: bold;
+}
+

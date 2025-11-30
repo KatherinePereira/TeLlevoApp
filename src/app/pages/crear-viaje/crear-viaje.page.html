@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Completa la información</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="fondo-card">
+    <ion-card-content>
+      <div class="form-container">
+        <form (ngSubmit)="onSubmit()" #viajeForm="ngForm">
+          <ion-item>
+            <ion-input type="text" labelPlacement="floating" label="Capacidad:" placeholder="1 - 4" [(ngModel)]="numAsientos" name="numAsientos" required></ion-input>
+            <ion-note slot="end" [ngClass]="{'error-text': numAsientos !== undefined && (numAsientos < 1 || numAsientos > 4)}">
+              La capacidad debe estar entre 1 y 4.
+            </ion-note>
+          </ion-item>
+          
+          <ion-item>
+            <ion-input type="text" labelPlacement="floating" label="Precio:" placeholder="1000" [(ngModel)]="precio" name="precio" required></ion-input>
+            <ion-note slot="end" [ngClass]="{'error-text': precio !== undefined && precio < 1000}">
+              El precio mínimo es 1000.
+            </ion-note>
+          </ion-item>
+
+          <div #mapDiv class="map-container"></div>
+
+          <div class="btn-crear">
+            <ion-button color="warning" expand="block" type="submit" [disabled]="!viajeForm.valid">CREAR</ion-button>
+          </div>
+        </form>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+
+</ion-content>
