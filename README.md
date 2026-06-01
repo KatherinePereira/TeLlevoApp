@@ -3,7 +3,7 @@
 > Aplicación móvil de viajes compartidos (ride-sharing) diseñada para la comunidad estudiantil.
 
 ## 📖 Sobre el Proyecto
-TeLlevoApp es una solución de movilidad desarrollada para facilitar el transporte de forma segura. Funciona bajo un modelo similar a Uber, permitiendo a los usuarios ofrecer o solicitar viajes, optimizando rutas y garantizando la seguridad en cada trayecto mediante la validación cruzada de credenciales. 
+TeLlevoApp es una solución de movilidad desarrollada como proyecto para la asignatura de **Programación Mobile**, durante el **4to semestre de mi carrera de Ingeniería en Informática**. Funciona bajo un modelo similar a Uber, permitiendo a los usuarios ofrecer o solicitar viajes, optimizando rutas y garantizando la seguridad en cada trayecto mediante la validación cruzada de credenciales.
 
 ## ✨ Características Principales
 * **Mapas y Rutas:** Integración con **Mapbox** y **Leaflet** para la visualización fluida de mapas y el cálculo de rutas óptimas.
